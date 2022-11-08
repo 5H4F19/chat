@@ -1,1 +1,6 @@
-# chat
+```
+
+yarn
+yarn dev
+
+```
