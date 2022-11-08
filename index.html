@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Chat App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      #message-container div {
+        background-color: #ccc;
+        padding: 5px;
+      }
+
+      #message-container div:nth-child(2n) {
+        background-color: #fff;
+      }
+      #message-input {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-red-400">
+    <div
+      class="flex flex-col mt-10 justify-between w-4/12 h-[90vh] bg-slate-100 rounded-xl overflow-hidden"
+    >
+      <div class="space-y-3 p-3" id="message-container"></div>
+      <form id="send-container" class="flex bg-white rounded-2xl px-2 py-2">
+        <input
+          class="w-full outline-none focus:outline-none text-sm"
+          placeholder="Message"
+          type="text"
+          id="message-input"
+          required
+        />
+        <button
+          class="px-3 py-1 bg-blue-500 text-white text-sm font-semibold rounded-xl"
+          type="submit"
+          id="send-button"
+        >
+          Send
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
